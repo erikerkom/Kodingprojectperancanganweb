@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<header>
+	<title>proyek tugas</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="form.css">
+
+<script>
+    function validasi(){
+        var namaValid    = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;
+        var emailValid   = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var nama         = formulir.nama.value;
+        var jeniskelamin = formulir.jenis_kelamin.value;
+        var email        = formulir.email.value;
+        var Mobil        = formulir.mobil.value;
+        var Tglpinjam    = formulir.tglpinjam.value;
+        var Ktp          = formulir.ktp.value;
+        var pesan = '';
+         
+        if (nama == '') {
+            pesan = '-Nama tidak boleh kosong\n';
+        }
+         
+        if (nama != '' && !nama.match(namaValid)) {
+            pesan += '-nama tidak valid\n';
+        }
+         
+        if (jeniskelamin == '') {
+            pesan += '-jenis kelamin harus dipilih\n';
+        }
+         
+        if (email == '') {
+            pesan += '-email tidak boleh kosong\n';
+        }
+         
+        if (email !=''  && !email.match(emailValid)) {
+            pesan += '-alamat email tidak valid\n';
+        }
+
+        if (Mobil =='') {
+            pesan+='-Memilih Mobil Wajib dilakukan\n';
+        }
+
+        if (Tglpinjam =='') {
+            pesan+='-Tanggal Pinjam Wajib Diisi\n';
+        }
+
+        if (Ktp =='') {
+            pesan+='-KTP Wajib diUpload/ diunggah\n';
+        }
+         
+        if (pesan != '') {
+            alert('Maaf, ada kesalahan pengisian Formulir : \n'+pesan);
+            return false;
+        }
+    return true
+    }
+</script>
+
+
+</header>
+<body id="badan">
+<nav class="navbar navbar-default" id="head">
+    <ul class="navbar-nav">
+     <a href="tugas proyek.html" class="navbar-brand">Beranda </a>
+     <a href="form.html" class="navbar-brand">Form Peminjaman</a>
+     <a href="about.html" class="navbar-brand">Tentang Kami </a>
+    </ul>
+</nav>
+<h4 align="center">Formulir Pengisian Penyewaan Mobil</h4>
+     <div class="container">
+    <div class="form-group">
+ <script type='text/javascript'>
+    <!--
+    var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    var date = new Date();
+    var daftarhari = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    var hari = date.getDay();
+    var day = date.getDate();
+    var month = date.getMonth();
+    var yy = date.getYear();
+    var year = (yy < 1000) ? yy + 1900 : yy;
+    document.write("Waktu Pengisian Data Pada Hari "+daftarhari[hari]+",  "+ day + " " + months[month] + " " + year);
+    //-->
+    </script> </br><br/>
+ </div></div>
+
+<div class="container">
+    <div class="form-group">
+<form name="formulir" action="selamat.html" method="post" onSubmit="return validasi()">
+   <div class="container">
+    <div class="form-group">
+<!-- Form start disini -->
+        <label >Nama Peminjam : <span class="glyphicon glyphicon-user"></span></label>
+        <input type="text" name="nama" maxlength="20" class="form-control" placeholder="nama lengkap Anda" />
+
+        <label for="jenis_kelamin">Jenis Kelamin : </label>
+        <select name="jenis_kelamin" class="form-control">
+            <option value="">Pilih Jenis Kelamin :</option>
+            <option value="laki-laki">Laki-Laki</option>
+            <option value="perempuan">Perempuan</option>
+        </select>
+        
+        <label for="email">Email @ : <span class="glyphicon glyphicon-envelope"></span> </label>
+        <input type="email" name="email" class="form-control" placeholder="contoh : emailsaya@mail.co.id"/>
+        <br/>
+        <label for="mobil"> Pilih Mobil disini : </label>
+        <select name="mobil" class="form-control">
+            <option value="">-Pilih Mobil-</option>
+            <option value="Inova Reborn">Inova Reborn</option>
+            <option value="Suzuki Ertiga">Suzuki Ertiga</option>
+            <option value="Grand New Avanza">Grand New Avanza</option>
+            <option value="Honda Jazz RS">Honda Jazz RS</option>
+            <option value="Mitshubishi Mirage">Mitshubishi Mirage</option>
+            <option value="Toyota Yaris">Toyota Yaris</option>
+            <option value="Toyota Hiace">Toyota Hiace</option>
+            <option value="Toyota Hilux">Toyota Hilux</option>
+            <option value="Toyota Fortuner">Toyota Fortuner</option>
+            <option value="Toyota Alphard">Toyota Alphard</option>
+        </select>
+        <label for="lamasewa">Lama Penyewaan : <span class="glyphicon glyphicon-time"></span> </label>
+        <select name="lamasewa" class="form-control" name="lamasewa">
+            <option value="">-Lama Sewa-</option>
+            <option value="1"> 1 Hari</option>
+            <option value="2"> 2 Hari</option>
+            <option value="3"> 3 Hari</option>
+            <option value="4"> 4 Hari</option>
+            <option value="5"> 5 Hari</option>
+            <option value="6"> 6 Hari</option>
+            <option value="7"> 7 Hari</option>
+         </select>
+        <br/>
+
+        <label for="tglpinjam"> Tanggal Pinjam :</label>
+        <input type="date" class="form-control" name="tglpinjam">
+        <br/>
+
+        <label for="harga">Biaya Sewa Mobil :</label>
+        <input type="number" name="harga" class="form-control" readonly="mobil">
+        <br/>
+
+        <label for="ktp">Upload Foto KTP (Wajib) : <span class="glyphicon glyphicon-paperclip"></span></label>
+        <input type="file" name="ktp" class="form-control">
+    
+    <br/>
+    <input type="submit" name="submit" value="SIMPAN" class="btn btn-primary">
+    <input type="reset" name="reset" value="RESET" class="btn btn-danger">
+</div>
+</div>
+</form>
+
+</body>
+</html>
